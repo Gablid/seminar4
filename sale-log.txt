@@ -1,0 +1,12 @@
+2018-maj-20 15:24:57, Exception was thrown: The item Apple Does not exist in the database
+integration.ItemNotFoundException: The item Apple Does not exist in the database
+	at integration.ItemRegistry.findItem(ItemRegistry.java:39)
+	at controller.Controller.enterItemIDAndQuantity(Controller.java:85)
+	at view.View.sampleExecution(View.java:37)
+	at startup.Main.main(Main.java:25)
+2018-maj-20 15:24:57, Exception was thrown: The item Melon Does not exist in the database
+integration.ItemNotFoundException: The item Melon Does not exist in the database
+	at integration.ItemRegistry.findItem(ItemRegistry.java:39)
+	at controller.Controller.enterItemID(Controller.java:71)
+	at view.View.sampleExecution(View.java:58)
+	at startup.Main.main(Main.java:25)
