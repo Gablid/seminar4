@@ -2,6 +2,7 @@ package view;
 
 import controller.Controller;
 import integration.ItemNotFoundException;
+import integration.ItemRegistryException;
 import logging.LogHandler;
 
 /**
@@ -60,6 +61,9 @@ public class View {
         } catch(ItemNotFoundException exception) {
             handleException("item does not exist: " + 
                     exception.getItemDoesNotExist(), exception);
+        }
+        catch(ItemRegistryException exception) {
+            handleException("The database cannot be accessed", exception);
         }
         System.out.println(contr.indicateAllItemsRegistered());
         System.out.println(contr.enterPaidCash(75));

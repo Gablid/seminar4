@@ -142,6 +142,7 @@ public class Sale {
      */
     public double calculateChange(double paidAmount) {
         changeAmount = paidAmount - runningTotal;
+        notifyObservers();
         return changeAmount;
     }
     

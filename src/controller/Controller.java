@@ -81,7 +81,7 @@ public class Controller {
      * @param quantity the quantity of the item
      */
     public String enterItemIDAndQuantity(String name, int quantity) 
-            throws ItemNotFoundException {
+            throws ItemNotFoundException, ItemRegistryException {
         ItemDTO item = itemRegistry.findItem(name);
         return sale.addItems(item, quantity);
 
@@ -109,7 +109,6 @@ public class Controller {
         sale.printReceipt(printer);
         accountingSystem.updateAccounting(sale);
         inventorySystem.updateInventory(sale);
-        sale.notifyObservers();
         return changeAmount;
     }
     

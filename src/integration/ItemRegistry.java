@@ -23,9 +23,7 @@ public class ItemRegistry {
      * 
      * @return The item from the registry with matching identifier
      */
-    public ItemDTO findItem(String name) throws ItemNotFoundException, 
-            ItemRegistryException {
-        try {
+    public ItemDTO findItem(String name) throws ItemNotFoundException {
             for(ItemDTO item: items) {
                 if(item.getName().equals(name))
                     if(name == "Apple")
@@ -33,9 +31,6 @@ public class ItemRegistry {
                     else    
                         return new ItemDTO(item);
             }
-        } catch(ItemRegistryException exception) {
-            System.out.println(exception);
-        }
         throw new ItemNotFoundException(name);
     }
  
